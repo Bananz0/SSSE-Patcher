@@ -8,8 +8,8 @@ $service1 = -join (83,121,115,116,101,109 | ForEach-Object { [char]$_ })
 $service2 = -join (83,117,112,112,111,114,116 | ForEach-Object { [char]$_ })
 $service3 = -join (69,110,103,105,110,101 | ForEach-Object { [char]$_ })
 $exeName = "$vendor$service1$service2$service3.exe"
-$appAcronym = -join (83,83,83,69 | ForEach-Object { [char]$_ })  # SSSE
-$innerCabName = -join (115,101,116,116,105,110,103,115,95,120,54,52,46,99,97,98 | ForEach-Object { [char]$_ })  # settings_x64.cab
+$appAcronym = -join (83,83,83,69 | ForEach-Object { [char]$_ })
+$innerCabName = -join (115,101,116,116,105,110,103,115,95,120,54,52,46,99,97,98 | ForEach-Object { [char]$_ })  
 
 $currentPolicy = Get-ExecutionPolicy -Scope CurrentUser
 if ($currentPolicy -eq "Restricted") {
@@ -299,4 +299,5 @@ try {
             Write-Host "Temporary extraction directory preserved: $extractDir" -ForegroundColor Cyan
         }
     }
+
 }
